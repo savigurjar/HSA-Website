@@ -173,11 +173,8 @@ body {
 }
 
 .philosophy-intro {
-  max-width: 700px;
-  margin: 0 auto 50px;
+  max-width: 900px;
   color: #cbd5e1;
-  font-size: 17px;
-  line-height: 1.6;
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
   position: relative;
   z-index: 1;
@@ -284,26 +281,11 @@ body {
 .philosophy-back h3 {
   font-size: clamp(20px, 2.5vw, 26px);
   margin-bottom: 12px;
-  color: #00d4ff;
+  color: #fdffff;
   text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
 }
 
-.philosophy-back p {
-  font-size: clamp(15px, 1.5vw, 17px);
-  color: #aebecd;
-  line-height: 1.5;
-  text-align: center;
-}
 
-/* QUOTE */
-.philosophy-quote {
-  margin-top: 60px;
-  font-style: italic;
-  color: #94a3b8;
-  text-shadow: 0 0 6px rgba(0, 255, 255, 0.2);
-  position: relative;
-  z-index: 1;
-}
 /* ========== HYBRID ADDITIONS ========== */
 
 /* Overlay Title on Front Image */
@@ -316,7 +298,7 @@ body {
   border-radius: 10px;
   color: #f1f5f9;
   text-align: left;
-  box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
 }
 
 .philosophy-overlay h3 {
@@ -329,7 +311,7 @@ body {
   display: inline-block;
   margin-top: 4px;
   font-size: 0.75rem;
-  color: #00d4ff;
+  color: #878c8d;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -337,18 +319,18 @@ body {
 /* Backside Blockquote */
 .philosophy-back blockquote {
   font-style: italic;
-  color: #38bdf8;
+  color: #afb4b8;
   margin-bottom: 15px;
   text-align: center;
   font-size: 0.95rem;
-  border-left: 2px solid #00d4ff;
+  border-left: 2px solid #878c8d;
   padding-left: 10px;
   line-height: 1.4;
 }
 
 /* Backside Lists */
 .philosophy-values h4 {
-  color: #00d4ff;
+  color: #ffffff;
   font-size: 0.9rem;
   margin-bottom: 6px;
   letter-spacing: 0.5px;
@@ -369,14 +351,14 @@ body {
   padding-left: 15px;
 }
 
-.philosophy-values li::before {
+/* .philosophy-values li::before {
   content: "•";
   color: #00d4ff;
   position: absolute;
   left: 0;
   font-size: 16px;
   line-height: 1;
-}
+} */
 
 /* Stats at Bottom of Card */
 .philosophy-stats {
@@ -393,7 +375,7 @@ body {
 .philosophy-stats strong {
   display: block;
   font-size: 1.1rem;
-  color: #00d4ff;
+  color: #ffffff;
 }
 
 .philosophy-stats span {
@@ -404,20 +386,21 @@ body {
 
 /* Learn More Button */
 .learn-more {
-  background: #00d4ff;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 6px;
-  color: #0f172a;
+  color: #f8fafc;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease-in-out;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: auto;
+  margin-top: 10px;
 }
 
 .learn-more:hover {
-  background: #38bdf8;
-  transform: scale(1.05);
+   color: #f8fafc;
+    transform: scale(1.03);
+    background: linear-gradient(135deg, #334155, #1e293b);
 }
 
 

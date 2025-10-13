@@ -91,7 +91,7 @@ export default function Home() {
       <div className="philosophy-card">
         <div className="philosophy-inner">
           <div className="philosophy-front">
-            <img src="/images/holistic.jpg" alt="Holistic Development" />
+            <img src="./src/assets/first.JPG" alt="Holistic Development" />
             <div className="philosophy-overlay">
               <h3>Holistic Growth</h3>
               <span className="philosophy-tag">Mind • Body • Spirit</span>
@@ -101,6 +101,7 @@ export default function Home() {
             <h3>Holistic Development</h3>
             <blockquote>“Excellence begins when mind and body align.”</blockquote>
             <div className="philosophy-values">
+              <h4>Principles</h4>
               <ul>
                 <li>Mental toughness training</li>
                 <li>Emotional balance</li>
@@ -130,6 +131,7 @@ export default function Home() {
             <h3>Community & Teamwork</h3>
             <blockquote>“One team. One heartbeat.”</blockquote>
             <div className="philosophy-values">
+              <h4>Principles</h4>
               <ul>
                 <li>Mutual respect</li>
                 <li>Collective success</li>
@@ -159,6 +161,7 @@ export default function Home() {
             <h3>Excellence & Innovation</h3>
             <blockquote>“Greatness is born from curiosity and courage.”</blockquote>
             <div className="philosophy-values">
+              <h4>Principles</h4>
               <ul>
                 <li>Adaptive training modules</li>
                 <li>Data-driven feedback</li>
@@ -188,6 +191,7 @@ export default function Home() {
             <h3>Resilience</h3>
             <blockquote>“Fall seven times, stand up eight.”</blockquote>
             <div className="philosophy-values">
+              <h4>Principles</h4>
               <ul>
                 <li>Endure challenges</li>
                 <li>Stay mentally strong</li>
@@ -217,6 +221,7 @@ export default function Home() {
             <h3>Leadership & Mentorship</h3>
             <blockquote>“Real leaders create more leaders.”</blockquote>
             <div className="philosophy-values">
+              <h4>Principles</h4>
               <ul>
                 <li>Inspire others</li>
                 <li>Own responsibility</li>
