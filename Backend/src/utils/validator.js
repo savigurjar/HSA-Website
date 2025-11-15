@@ -1,6 +1,6 @@
 const validator = require("validator");
 
-function validUser(data) {
+ async function validUser(data) {
   const mandatoryFields = ["firstName", "emailId", "password"];
 
   // Check if all mandatory fields are present

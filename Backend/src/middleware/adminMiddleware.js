@@ -1,8 +1,8 @@
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
-const redisClient = require("../Database/redis"); // ensure you import it
+const redisClient = require("../Database/redis"); 
 
-const userMidd = async (req, res, next) => {
+const adminMidd = async (req, res, next) => {
   try {
     const token = req.cookies?.token;
     if (!token) throw new Error("Token is missing");
@@ -23,4 +23,4 @@ const userMidd = async (req, res, next) => {
   }
 };
 
-module.exports = userMidd;
+module.exports = adminMidd;

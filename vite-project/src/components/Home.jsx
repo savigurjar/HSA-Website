@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../style/Home.css"; // ✅ Ensure the path is correct
+import "../style/Home.css"; // Ensure the path is correct
 
 export default function Home() {
   // 👇 Scroll animation for philosophy cards
