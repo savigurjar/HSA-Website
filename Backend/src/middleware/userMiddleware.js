@@ -4,8 +4,8 @@ const redisClient = require("../Database/redis"); // ensure you import it
 
 const userMidd = async (req, res, next) => {
   try {
-    const token = req.cookies?.token;
-    if (!token) throw new Error("Token is missing");
+  const { token } = req.cookies;
+        if (!token) throw new Error("Token is Missing");
 
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     if (!payload?._id) throw new Error("Invalid token payload");

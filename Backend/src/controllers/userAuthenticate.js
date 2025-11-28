@@ -9,6 +9,7 @@ const userSignup = async (req, res) => {
   try {
     await validUser(req.body);
     req.body.password = await bcrypt.hash(req.body.password, 10);
+
     const newUser = await User.create(req.body);
 
     const token = jwt.sign(
@@ -23,9 +24,8 @@ const userSignup = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-  sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax"
-
+      secure: false,
+      sameSite: "lax"
     });
 
     res.status(201).send({
@@ -46,6 +46,7 @@ const userSignup = async (req, res) => {
 const userLogin = async (req, res) => {
   try {
     const { emailId, password } = req.body;
+
     const user = await User.findOne({ emailId });
     if (!user) return res.status(401).send({ error: "Invalid credentials" });
 
@@ -64,9 +65,8 @@ const userLogin = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax"
-
+      secure: false,
+      sameSite: "lax"
     });
 
     res.status(200).send({
@@ -107,7 +107,6 @@ const getProfile = async (req, res) => {
 const deleteProfile = async (req, res) => {
   try {
     const { id } = req.params;
-    if (!id) return res.status(400).send({ error: "User ID required" });
 
     const deletedUser = await User.findByIdAndDelete(id);
     if (!deletedUser) return res.status(404).send({ error: "User not found" });
@@ -128,14 +127,14 @@ const logout = async (req, res) => {
     if (!token) throw new Error("Token is missing");
 
     const payload = jwt.verify(token, process.env.JWT_SECRET);
+
     await redisClient.set(`token:${token}`, "Blocked");
     await redisClient.expireAt(`token:${token}`, payload.exp);
 
     res.clearCookie("token", {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax"
-
+      secure: false,
+      sameSite: "lax"
     });
 
     res.status(200).send({ message: "Logged out successfully" });
@@ -165,9 +164,8 @@ const adminSignup = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax"
-
+      secure: false,
+      sameSite: "lax"
     });
 
     res.status(201).send({
@@ -184,6 +182,6 @@ module.exports = {
   userLogin,
   getProfile,
   deleteProfile,
-  
   adminSignup,
+  logout,
 };
