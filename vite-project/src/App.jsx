@@ -6,10 +6,12 @@ import Footer from "./components/Footer";
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Home from './components/Home';
-// import LiveScores from './pages/LiveScore';
-// import Quize from './pages/Quize';
-
 import './App.css';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Stories from './pages/Stories';
+import Blog from './pages/Blog';
+import Partner from './pages/Partner';
 
 function App() {
   return (
@@ -21,8 +23,12 @@ function App() {
              <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
              <Route path="/signup" element={<Signup />} />
-            {/* <Route path="/live" element={<LiveScores />} />
-            <Route path="/quiz" element={<Quize />} />  */}
+             <Route path='/about' element={<About/>}/>
+             <Route path='/contact' element={<Contact/>}/>
+             <Route path='/stories' element={<Stories/>}/>
+             <Route path='/blogs' element={<Blog/>}/>
+             <Route path='/partner' element={<Partner/>}/>
+            
           </Routes>
         </main>
         <Footer /> 
